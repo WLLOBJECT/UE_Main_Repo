@@ -1,0 +1,55 @@
+// Your styles
+th{
+    border: black solid 1px;
+}
+
+tr{
+    border: black solid 1px;
+}
+
+
+td{
+    border: black solid 1px;
+}
+
+.show {
+    display: block;
+    z-index: 9999;
+    position: absolute;
+    top: 70px;
+    left: 43%;
+    margin: 10px auto;
+    width: 300px;
+    height: 70px;
+    /* line-height: 70px; */
+    background-color: aquamarine;
+    text-align: center;
+}
+
+.show2 {
+    display: block;
+    z-index: 9999;
+    position: absolute;
+    top: 70px;
+    left: 43%;
+    margin: 10px auto;
+    width: 300px;
+    height: 120px;
+    /* line-height: 70px; */
+    background-color: aquamarine;
+    text-align: center;
+}
+
+.close {
+    float: right;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.msg {
+    clear: both;
+}
+
+.hidden {
+    display: none;
+}

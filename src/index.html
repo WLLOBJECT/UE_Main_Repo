@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Fitness</title>
+  </head>
+  <body>
+    <div style="width: 800px; margin: 100px auto;">
+      <div style="text-align: center;padding: 10px;">
+          <input type="text" placeholder="member id" [(ngModel)]="id" id="keyword">
+          <button (click)="search()" id="searchBtn">search</button>
+          <button (click)="reset()" id="resetBtn">reset</button>
+          <button (click)="add()" id="addBtn">add</button>
+          <button (click)="help()" id="helpBtn">help</button>
+      </div>
+      <table style="width: 800px; border: black 1px solid;text-align: center;">
+          <thead> 
+              <th>Index</th>
+              <th>Member Id</th>
+              <th>Full name</th>
+              <th>Birthday</th>
+              <th>Gender</th>
+              <th>Email</th>
+              <th>Contact number</th>
+              <th>Action</th>
+          </thead>
+          <tbody id="tbody">
+              <!-- <tr *ngFor="let item of memberArr; let i = index">
+                  <td>{{i}}</td>
+                  <td>{{item.id}}</td>
+                  <td>{{item.name}}</td>
+                  <td>{{item.dob}}</td>
+                  <td>{{item.gender}}</td>
+                  <td>{{item.email}}</td>
+                  <td>{{item.contact}}</td>
+                  <td>
+                      <button (click)="edit(i)">edit</button>
+                      <button (click)="del(i)">delete</button>
+                  </td>
+              </tr> -->
+          </tbody>
+      </table>
+      </div>
+
+      <div id="formDiv">
+        <table style="width: 500px; border: black solid 1px;margin: 100px auto; padding: 10px;border-collapse:collapse;" cellspacing=10>
+            <thead>
+                <th>* Member Id:</th>
+                <td><input type="text" [(ngModel)]="member.id" disabled id="formId"></td>
+            </thead>
+            <thead>
+                <th>* Full name:</th>
+                <td><input type="text" [(ngModel)]="member.name" id="formName"></td>
+            </thead>
+            <thead>
+                <th>* Date of birthday:</th>
+                <td><input type="text" [(ngModel)]="birth" placeholder="yyyy-MM-dd" id="formBirth"></td>
+            </thead>
+            <thead>
+                <th>* Gender:</th>
+                <td>
+                    <select type="text" [(ngModel)]="member.gender" id="formGender">
+                        <option value="Female">Female</option>
+                        <option value="Male">Male</option>
+                        <option value="Unspecified">Unspecified</option>
+                    </select>
+                </td>
+            </thead>
+            <thead>
+                <th>* Membership type:</th>
+                <td>
+                    <!-- 'Basic' | 'Premium' | 'Corporate' | 'Student' | 'Day pass'-->
+                    <select type="text" [(ngModel)]="member.membership" id="formMembership">
+                        <option value="Basic">Basic</option>
+                        <option value="Premium">Premium</option>
+                        <option value="Corporate">Corporate</option>
+                        <option value="Student">Student</option>
+                        <option value="Day pass">Day pass</option>
+                    </select>
+                </td>
+            </thead>
+            <thead>
+                <th>* Membership start day:</th>
+                <td><input type="text" [(ngModel)]="startDay" placeholder="yyyy-MM-dd" id="formStartDay"></td>
+            </thead>
+            <thead>
+                <th>* Contact number:</th>
+                <td><input type="text" [(ngModel)]="member.contact" id="formContact"></td>
+            </thead>
+            <thead>
+                <th>* Email:</th>
+                <td><input type="text" [(ngModel)]="member.email" id="formEmail"></td>
+            </thead>
+            <thead>
+                <th>* Residential Address:</th>
+                <td><input type="text" [(ngModel)]="member.address" id="formAddress"></td>
+            </thead>
+            <thead>
+                <th>* Emergency contact number:</th>
+                <td><input type="text" [(ngModel)]="member.emergencyContact" id="formEmergencyContact"></td>
+            </thead>
+            <thead>
+                <th>Medical condition:</th>
+                <td><input type="text" [(ngModel)]="member.medicalCondition" id="formMedicalCondition"></td>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="2" style="text-align: center;">
+                        <button (click)="submit()" id="formSubmit">submit</button>
+                        <!-- <button (click)="help()" style="margin-left: 10px;">help</button> -->
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+      </div>
+    
+
+      <div class="show" id="tip">
+          <div>
+              <span class="close" (click)="close()" id="close">X</span>
+          </div>
+          <div class="msg" id="msg">
+              This is the member management page!
+          </div>
+      </div>
+      
+      <div class="show" id="tip2">
+          <div>
+              <span class="close" (click)="close2()" id="close2">X</span>
+          </div>
+          <div class="msg">
+              Do you really want to delete? 
+          </div>
+          <div style="margin-top: 10px;">
+              <button (click)="yes()" id="yes">yes</button>
+              <button (click)="close2()" style="margin-left: 10px;" id="close3">no</button>
+          </div>
+      </div>
+    </body>
+</html>
